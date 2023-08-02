@@ -1,0 +1,60 @@
+1. Build Docker Image:
+   Assuming you have a Dockerfile in your current directory, you can build the Docker image with the following command:
+   ```bash
+   docker build -t your_image_name:tag .
+   ```
+   Replace `your_image_name` with the desired name for your image and `tag` with a version or tag for the image. The `.` at the end of the command refers to the current directory, where the Dockerfile is located.
+
+2. List Docker Images:
+   To list the Docker images available on your local machine, use the following command:
+   ```bash
+   docker images
+   ```
+   This command will display a list of all the Docker images available on your system.
+
+3. Create and Start a Container:
+   Once you have built the Docker image, you can create and start a container with the following command:
+   ```bash
+   docker run -d -p 8080:80 your_image_name:tag
+   ```
+   Replace `your_image_name` with the name you chose for your image, and `tag` with the version or tag you assigned earlier. This command will run a container in detached mode (`-d`) and map port 8080 of your host machine to port 80 of the container.
+
+4. List Running Containers:
+   To see a list of running containers on your system, use the following command:
+   ```bash
+   docker ps
+   ```
+   This command will display a list of all the containers that are currently running.
+
+5. Update README:
+   In your README file, you can add the following commands to help users create the Docker image, create/start a container, and upload the image to DockerHub:
+
+   ```
+   ### How to create the Docker image:
+
+   ```bash
+   docker build -t your_image_name:tag .
+   ```
+
+   Replace `your_image_name` with the desired name for your image and `tag` with a version or tag for the image. The `.` at the end of the command refers to the current directory, where the Dockerfile is located.
+
+   ### How to create and start a container:
+
+   ```bash
+   docker run -d -p 8080:80 your_image_name:tag
+   ```
+
+   Replace `your_image_name` with the name you chose for your image, and `tag` with the version or tag you assigned earlier. This command will run a container in detached mode (`-d`) and map port 8080 of your host machine to port 80 of the container.
+
+   ### How to upload the image to DockerHub:
+
+   ```bash
+   docker login
+   docker tag your_image_name:tag your_dockerhub_username/your_image_name:tag
+   docker push your_dockerhub_username/your_image_name:tag
+   ```
+
+   Make sure to replace `your_dockerhub_username` with your DockerHub username and `your_image_name:tag` with the image name and version/tag you want to publish to DockerHub. The `docker login` command is used to authenticate with DockerHub before pushing the image.
+   ```
+
+Please note that to upload the image to DockerHub, you will need to have an account on DockerHub and be logged in (`docker login`) before pushing the image. Additionally, make sure to replace `your_dockerhub_username` with your actual DockerHub username.
